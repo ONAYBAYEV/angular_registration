@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col text-center p-2 mb-3 bg-light">
+        <span class="fs-3">User list</span>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date of birth</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users;let i = index">
+                <td>{{user.name}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.dOf}}</td>
+                <td>{{user.gender}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" (click)="editUser(i)">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
